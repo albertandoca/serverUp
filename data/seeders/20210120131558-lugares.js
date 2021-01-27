@@ -8873,7 +8873,10 @@ module.exports = {
       {codigo:'REC-4374', detalle:'.MONTEVIDEO', idLugar:4490, createdAt: new Date(), updatedAt: new Date()},
       {codigo:'REC-4375', detalle:'CARACAS', idLugar:4491, createdAt: new Date(), updatedAt: new Date()},
       {codigo:'REC-4376', detalle:'VALENCIA', idLugar:4492, createdAt: new Date(), updatedAt: new Date()},
-      {codigo:'REC-4377', detalle:'.PRETORIA', idLugar:4493, createdAt: new Date(), updatedAt: new Date()}
+      {codigo:'REC-4377', detalle:'.PRETORIA', idLugar:4493, createdAt: new Date(), updatedAt: new Date()},
+      {codigo:'PRESIDEN', detalle:'PRESIDENTE', idLugar:0, createdAt: new Date(), updatedAt: new Date()},
+      {codigo:'NACIONAL', detalle:'ASAMBLEISTA NACIONAL', idLugar:0, createdAt: new Date(), updatedAt: new Date()},
+      {codigo:'PARLAMEN', detalle:'PARLAMENTARIO ANDINO', idLugar:0, createdAt: new Date(), updatedAt: new Date()}
     ], {});
   },
 
