@@ -19,8 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     numero: DataTypes.INTEGER,
     idPersona: DataTypes.INTEGER,
     electores: DataTypes.INTEGER,
-    control: DataTypes.BOOLEAN,
-    auditoria: DataTypes.BOOLEAN
+    ctrl: DataTypes.BOOLEAN,
+    takeImg: DataTypes.BOOLEAN,
+    auditoria: DataTypes.BOOLEAN,
+    sendData: DataTypes.BOOLEAN,
+    sendImg: DataTypes.BOOLEAN,
+    
   }, {
     sequelize,
     modelName: 'Mesas',

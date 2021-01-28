@@ -6,11 +6,99 @@ let sequelize = require('sequelize'),
     op = sequelize.Op,
     codec = new hpack()
 
-
 let prueba = (req, res) => {
-    res.status(200).send('hola muestra')
+    res.status(200).send('hola app')
 }
 
+let login = (req, res) => {
+    console.log(req.body.usuario)
+    let usuario = req.body.usuario
+    let seguro = req.body.seguro
+    console.log(usuario, seguro)
+
+    if (usuario && seguro ) {
+        console.log('1234');
+        modelos.Personas.findOne({
+            attributes: { 
+                exclude: [
+                    'correo',
+                    'rol',
+                    'createdAt',
+                    'updatedAt'
+                ] 
+            },
+            where: {
+                cedula: usuario
+            }
+        }).then(data => {
+            if (data) {
+                let persona = data.toJSON()
+                if (seguro === persona.seguro) {
+                    delete persona.seguro
+                    return res.status(200).json({
+                        data: persona,
+                        msg: 'ok'
+                    });
+                } else {
+                    return res.status(200).json({
+                        data: {},
+                        msg: 'Usuario o contraseña incorrectos 1'
+                    })
+                }
+            } else {
+                return res.status(200).json({
+                    data: {},
+                    msg: 'Usuario o contraseña incorrectos 2'
+                })
+            } 
+        }).catch(err => {
+            return res.status(200).json({
+                data: {},
+                msg: 'Servido ocupado, intentelo más tarde 3'
+            })
+        })
+    }
+}
+
+
+
+let mesas = (req, res) => {
+    console.log(req.body)
+    let idPersona = req.body.idPersona
+    modelos.Mesas.findAll({
+        attributes: { 
+            exclude: [
+                'auditoria',
+                'createdAt',
+                'updatedAt'
+            ] 
+        },
+        where: {
+            idPersona: idPersona
+        }
+    }).then(mesas => {
+        return res.status(200).json({
+            data: mesas,
+            msg: 'ok'
+        })
+    }).catch(err => {
+        return res.status(200).json({
+            data: {},
+            msg: 'Servido ocupado, intentelo más tarde'
+        })
+    })
+}
+
+let getPersonas = (req, res) => {
+    modelos.Personas.findAll()
+    .then(d => {
+        return res.status(200).json({
+            data: d,
+            msg: 'ok'
+        })
+    })
+}
+/*
 let leerpresidentes = (req, res) => {
     console.time('leer')
     modelos.PresidentePartidos.findAll()
@@ -206,13 +294,12 @@ let actualizaPartidoMesa = (req, res) => {
         msg: (end-start)
     }) 
 
-}
+}  */
 
 
 module.exports = {
-    asignarMuestra,
-    crearPartidoMesa,
-    actualizaPartidoMesa,
-    leerpresidentes,
-    prueba
+    login,
+    mesas,
+    prueba,
+    getPersonas
 }

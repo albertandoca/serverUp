@@ -5,6 +5,7 @@ const express = require('express')
 let api = express.Router(),
     muestraControl = require('../controles/muestra')
 
+api.get('/prueba', muestraControl.prueba)
 api.get('/muestra', muestraControl.asignarMuestra)
 api.get('/partidomesa/:inicio/:fin', muestraControl.crearPartidoMesa)
 api.get('/actualizapartidomesa', muestraControl.actualizaPartidoMesa)

@@ -28,6 +28,19 @@ module.exports = {
         seguro: '123456789',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        cedula: '0606060606',
+        apellidoPaterno: 'GUEVARA',
+        apellidoMaterno: 'LÓPEZ',
+        primerNombre: 'ROSA',
+        segundoNombre: 'LINDA',
+        correo: 'rosalinda@gmail.com',
+        idLugar: 6,
+        rol: 'DATOS',
+        seguro: '12345678',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
 
   ], {});
