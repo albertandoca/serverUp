@@ -26,18 +26,6 @@ module.exports = {
       ctrl: {
         type: Sequelize.BOOLEAN
       },
-      takeImg: {
-        type: Sequelize.BOOLEAN
-      },
-      auditoria: {
-        type: Sequelize.BOOLEAN
-      },
-      sendData: {
-        type: Sequelize.BOOLEAN
-      },
-      sendImg: {
-        type: Sequelize.BOOLEAN
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
