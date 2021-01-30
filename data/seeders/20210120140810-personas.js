@@ -36,7 +36,7 @@ module.exports = {
         primerNombre: 'ROSA',
         segundoNombre: 'LINDA',
         correo: 'rosalinda@gmail.com',
-        idLugar: 6,
+        idLugar: 33,
         rol: 'DATOS',
         seguro: '12345678',
         createdAt: new Date(),
