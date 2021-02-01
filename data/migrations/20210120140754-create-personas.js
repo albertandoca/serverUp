@@ -11,16 +11,10 @@ module.exports = {
       cedula: {
         type: Sequelize.STRING
       },
-      apellidoPaterno: {
+      apellidos: {
         type: Sequelize.STRING
       },
-      apellidoMaterno: {
-        type: Sequelize.STRING
-      },
-      primerNombre: {
-        type: Sequelize.STRING
-      },
-      segundoNombre: {
+      nombres: {
         type: Sequelize.STRING
       },
       correo: {

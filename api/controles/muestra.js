@@ -97,7 +97,7 @@ let crearRandom = async (sexoMesa, lugar, control, jf, ji) => {
             if (banderaRandom === false) {
                 randomMesas.push(random)
                 await modelos.Mesas.update({
-                    control: true
+                    ctrl: true
                 },
                 {
                     where: {

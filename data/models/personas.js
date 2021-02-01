@@ -15,10 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Personas.init({
     cedula: DataTypes.STRING,
-    apellidoPaterno: DataTypes.STRING,
-    apellidoMaterno: DataTypes.STRING,
-    primerNombre: DataTypes.STRING,
-    segundoNombre: DataTypes.STRING,
+    apellidos: DataTypes.STRING,
+    nombres: DataTypes.STRING,
     correo: DataTypes.STRING,
     idLugar: DataTypes.INTEGER,
     rol: DataTypes.STRING,
