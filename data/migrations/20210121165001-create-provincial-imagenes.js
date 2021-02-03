@@ -12,13 +12,13 @@ module.exports = {
         type: Sequelize.BIGINT
       },
       urlImg1: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       urlImg2: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       urlImg3: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

@@ -26,6 +26,18 @@ module.exports = {
       ctrl: {
         type: Sequelize.BOOLEAN
       },
+      presidente: {
+        type: Sequelize.INTEGER
+      },
+      nacional: {
+        type: Sequelize.INTEGER
+      },
+      provincial: {
+        type: Sequelize.INTEGER
+      },
+      parlamento: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

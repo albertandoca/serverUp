@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   NacionalImagenes.init({
     idMesa: DataTypes.BIGINT,
-    urlImg1: DataTypes.STRING,
-    urlImg2: DataTypes.STRING,
-    urlImg3: DataTypes.STRING
+    urlImg1: DataTypes.TEXT,
+    urlImg2: DataTypes.TEXT,
+    urlImg3: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'NacionalImagenes',

@@ -19,7 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     numero: DataTypes.INTEGER,
     idPersona: DataTypes.INTEGER,
     electores: DataTypes.INTEGER,
-    ctrl: DataTypes.BOOLEAN    
+    ctrl: DataTypes.BOOLEAN,
+    presidente: DataTypes.INTEGER,
+    nacional: DataTypes.INTEGER,
+    provincial: DataTypes.INTEGER,
+    parlamento: DataTypes.INTEGER   
   }, {
     sequelize,
     modelName: 'Mesas',

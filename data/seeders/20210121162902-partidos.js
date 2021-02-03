@@ -70,6 +70,7 @@ module.exports = {
       { detalle: 'MINGA POR LA VIDA', lista: '2-18-62', urlLogo: 'lista2-18-62.png', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'UNIDAD POR EL FUTURO', lista: '67-33', urlLogo: 'lista67-33.png', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'ALIANZA UNETE', lista: '100-65-6', urlLogo: 'lista100-65-6.png', createdAt: new Date(), updatedAt: new Date()},
+      { detalle: 'ALIANZA COALICION DEL MIGRANTE', lista: '3-17-51', urlLogo: 'lista3-17-51.png', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'ARAUZ GALARZA ANDRES DAVID', lista: '1-5', urlLogo: 'arauz.jpeg', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'GUTIERREZ BORBUA LUCIO EDWIN', lista: '3', urlLogo: 'gutierrez.jpeg', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'ALMEIDA ESPINOZA CARLOS GERSON ALTEMAR', lista: '4', urlLogo: 'almeida.jpeg', createdAt: new Date(), updatedAt: new Date()},
@@ -85,7 +86,10 @@ module.exports = {
       { detalle: 'CELI SANTOS GUILLERMO ALEJANDRO', lista: '23', urlLogo: 'celi.jpeg', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'VELASCO TORRES JUAN FERNANDO', lista: '25', urlLogo: 'velasco.jpeg', createdAt: new Date(), updatedAt: new Date()},
       { detalle: 'CARRASCO CARPIO PAUL ERNESTO', lista: '33', urlLogo: 'carrasco.jpeg', createdAt: new Date(), updatedAt: new Date()},
-      { detalle: 'PEÑA PACHECO XIMENA DEL ROCIO', lista: '35', urlLogo: 'pena.jpeg', createdAt: new Date(), updatedAt: new Date()}
+      { detalle: 'PEÑA PACHECO XIMENA DEL ROCIO', lista: '35', urlLogo: 'pena.jpeg', createdAt: new Date(), updatedAt: new Date()},
+      { detalle: 'TOTAL DE VOTANTES (FIRMAS Y HUELLAS)', lista: '35', urlLogo: 'pena.jpeg', createdAt: new Date(), updatedAt: new Date()},
+      { detalle: 'VOTOS BLANCOS', lista: 'B', urlLogo: 'default.jpeg', createdAt: new Date(), updatedAt: new Date()},
+      { detalle: 'VOTOS NULOS', lista: 'N', urlLogo: 'default.jpeg', createdAt: new Date(), updatedAt: new Date()}
   ], {});
  },
 
