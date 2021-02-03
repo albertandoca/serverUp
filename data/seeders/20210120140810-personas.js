@@ -1,5 +1,5 @@
 'use strict';
-
+let bcrypt = require('bcrypt')
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Personas', [
@@ -10,7 +10,7 @@ module.exports = {
         correo: 'sin@correo.com',
         idLugar: 17,
         rol: 'ninguno',
-        seguro: '12345678',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -21,7 +21,7 @@ module.exports = {
         correo: 'albertandoca@gmail.com',
         idLugar: 17,
         rol: 'ADMINISTRADOR',
-        seguro: '12345678',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -32,7 +32,7 @@ module.exports = {
         correo: 'chimborazo@up.com',
         idLugar: 33,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -43,7 +43,7 @@ module.exports = {
         correo: 'azuay@up.com',
         idLugar: 28,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -54,7 +54,7 @@ module.exports = {
         correo: 'bolivarr@up.com',
         idLugar: 29,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -65,7 +65,7 @@ module.exports = {
         correo: 'cañar@up.com',
         idLugar: 30,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -76,7 +76,7 @@ module.exports = {
         correo: 'carchi@up.com',
         idLugar: 31,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -87,7 +87,7 @@ module.exports = {
         correo: 'cotopaxi@up.com',
         idLugar: 32,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -98,7 +98,7 @@ module.exports = {
         correo: 'eloro@up.com',
         idLugar: 34,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -109,7 +109,7 @@ module.exports = {
         correo: 'esmeraldas@up.com',
         idLugar: 35,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -120,7 +120,7 @@ module.exports = {
         correo: 'guayas1@up.com',
         idLugar: 36,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -131,7 +131,7 @@ module.exports = {
         correo: 'guayas2@up.com',
         idLugar: 37,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -142,7 +142,7 @@ module.exports = {
         correo: 'guayas3@up.com',
         idLugar: 38,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -153,7 +153,7 @@ module.exports = {
         correo: 'guayas4@up.com',
         idLugar: 39,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -164,7 +164,7 @@ module.exports = {
         correo: 'imbabura@up.com',
         idLugar: 40,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -175,7 +175,7 @@ module.exports = {
         correo: 'loja@up.com',
         idLugar: 41,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -186,7 +186,7 @@ module.exports = {
         correo: 'losrios@up.com',
         idLugar: 42,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -197,7 +197,7 @@ module.exports = {
         correo: 'manabi1@up.com',
         idLugar: 43,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -208,7 +208,7 @@ module.exports = {
         correo: 'manabi2@up.com',
         idLugar: 44,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -219,7 +219,7 @@ module.exports = {
         correo: 'morona@up.com',
         idLugar: 45,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -230,7 +230,7 @@ module.exports = {
         correo: 'napo@up.com',
         idLugar: 46,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -241,7 +241,7 @@ module.exports = {
         correo: 'pastaza@up.com',
         idLugar: 47,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -252,7 +252,7 @@ module.exports = {
         correo: 'pichincha1@up.com',
         idLugar: 48,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -263,7 +263,7 @@ module.exports = {
         correo: 'pichincha2@up.com',
         idLugar: 49,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -274,7 +274,7 @@ module.exports = {
         correo: 'pichincha3@up.com',
         idLugar: 50,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -285,7 +285,7 @@ module.exports = {
         correo: 'pichincha4@up.com',
         idLugar: 51,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -296,7 +296,7 @@ module.exports = {
         correo: 'tungurahua@up.com',
         idLugar: 52,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -307,7 +307,7 @@ module.exports = {
         correo: 'zamora@up.com',
         idLugar: 53,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -318,7 +318,7 @@ module.exports = {
         correo: 'galapagos@up.com',
         idLugar: 54,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -329,7 +329,7 @@ module.exports = {
         correo: 'sucumbios@up.com',
         idLugar: 55,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -340,7 +340,7 @@ module.exports = {
         correo: 'orellana@up.com',
         idLugar: 56,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -351,7 +351,7 @@ module.exports = {
         correo: 'santodomingo@up.com',
         idLugar: 57,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -362,7 +362,7 @@ module.exports = {
         correo: 'santaelena@up.com',
         idLugar: 58,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -373,7 +373,7 @@ module.exports = {
         correo: 'europa@up.com',
         idLugar: 59,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -384,7 +384,7 @@ module.exports = {
         correo: 'eeuu@up.com',
         idLugar: 60,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -395,7 +395,7 @@ module.exports = {
         correo: 'america@up.com',
         idLugar: 61,
         rol: 'DATOS',
-        seguro: '0606060606',
+        seguro: bcrypt.hashSync('12345678', bcrypt.genSaltSync(10), null),
         createdAt: new Date(),
         updatedAt: new Date()
       }

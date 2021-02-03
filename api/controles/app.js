@@ -1,5 +1,7 @@
 'use strict';
 const hpack = require('hpack')
+let jwt = require('jsonwebtoken')
+let bcrypt = require('bcrypt')
 
 let sequelize = require('sequelize'),
     modelos = require('../../data/models'),
@@ -11,51 +13,68 @@ let prueba = (req, res) => {
 }
 
 let login = (req, res) => {
-    console.log(req.body.usuario)
-    let usuario = req.body.usuario
-    let seguro = req.body.seguro
-    console.log(usuario, seguro)
+    let usuario = req.body.data.usuario || null
+    let seguro = req.body.data.seguro || null
 
     if (usuario && seguro ) {
-        console.log('1234');
         modelos.Personas.findOne({
             attributes: { 
                 exclude: [
-                    'correo',
-                    'rol',
                     'createdAt',
                     'updatedAt'
                 ] 
             },
             where: {
-                cedula: usuario
+                correo: usuario
             }
         }).then(data => {
             if (data) {
                 let persona = data.toJSON()
-                if (seguro === persona.seguro) {
-                    delete persona.seguro
-                    return res.status(200).json({
-                        data: persona,
-                        msg: 'ok'
-                    });
-                } else {
-                    return res.status(200).json({
-                        data: {},
-                        msg: 'Usuario o contraseña incorrectos 1'
-                    })
-                }
+                bcrypt.compare(seguro, persona.seguro, function(err, result) {
+                    if(result) {
+                        if (persona.rol === 'DATOS' || persona.rol === 'VERIFICA') {
+                            delete persona.rol
+                            delete persona.seguro
+                            delete persona.correo
+                            let semilla = `${persona.cedula}awsd${process.env.KEY_JWT}`
+                            console.log(semilla)
+                            let frase = jwt.sign({data: persona }, semilla, {
+                                algorithm: 'HS256'
+                            })
+                            persona.frase = frase
+                            return res.status(200).json({
+                                data: persona,
+                                msg: 'ok'
+                            });
+                        } else {
+                            return res.status(200).json({
+                                data: {frase: false},
+                                msg: 'no Ok1'
+                            })
+                        }
+                    } else {
+                        return res.status(200).json({
+                            data: {frase: false},
+                            msg: 'no Ok2'
+                        })
+                    }
+                })
             } else {
                 return res.status(200).json({
-                    data: {},
-                    msg: 'Usuario o contraseña incorrectos 2'
+                    data: {frase: false},
+                    msg: 'no Ok3'
                 })
             } 
         }).catch(err => {
             return res.status(200).json({
-                data: {},
-                msg: 'Servido ocupado, intentelo más tarde 3'
+                data: {frase: false},
+                msg: 'no Ok4'
             })
+        })
+    } else {
+        return res.status(200).json({
+            data: {frase: false},
+            msg: 'no Ok5'
         })
     }
 }
@@ -63,12 +82,12 @@ let login = (req, res) => {
 
 
 let mesas = (req, res) => {
-    console.log(req.body)
-    let idPersona = req.body.idPersona
+    console.log('mesa', req.body)
+    let idPersona = req.body.data.idPersona
+    
     modelos.Mesas.findAll({
         attributes: { 
             exclude: [
-                'auditoria',
                 'createdAt',
                 'updatedAt'
             ] 
@@ -82,10 +101,9 @@ let mesas = (req, res) => {
             msg: 'ok'
         })
     }).catch(err => {
-        console.log(err)
         return res.status(200).json({
-            data: {},
-            msg: 'Servido ocupado, intentelo más tarde'
+            data: {token: false},
+            msg: 'no Ok'
         })
     })
 }
@@ -412,7 +430,7 @@ let uploadImgParlamento = (req, res) => {
 
     if (idMesa) {
         modelos.Mesas.update({
-            presidente: 2
+            parlamento: 2
         },
         {
             where: {
