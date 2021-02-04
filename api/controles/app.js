@@ -117,6 +117,85 @@ let getPersonas = (req, res) => {
     })
 }
 
+
+let inconsistentePresidente = (req, res) => {
+    let idMesa = req.body.data.idMesa
+    if(idMesa) {
+        modelos.Mesas.update({
+            presidente: 1
+        },
+        {
+            where: {
+                id: idMesa
+            }
+        }).then(mesa => {
+            return res.status(200).json({
+                data: [true],
+                msg: 'ok'
+            })
+        })
+    }
+}
+
+let inconsistenteNacional = (req, res) => {
+    let idMesa = req.body.data.idMesa
+    if(idMesa) {
+        modelos.Mesas.update({
+            nacional: 1
+        },
+        {
+            where: {
+                id: idMesa
+            }
+        }).then(mesa => {
+            return res.status(200).json({
+                data: [true],
+                msg: 'ok'
+            })
+        })
+    }
+}
+
+let inconsistenteProvincial = (req, res) => {
+    let idMesa = req.body.data.idMesa
+    if(idMesa) {
+        modelos.Mesas.update({
+            provincial: 1
+        },
+        {
+            where: {
+                id: idMesa
+            }
+        }).then(mesa => {
+            return res.status(200).json({
+                data: [true],
+                msg: 'ok'
+            })
+        })
+    }
+}
+
+let inconsistenteParlamento = (req, res) => {
+    let idMesa = req.body.data.idMesa
+    if(idMesa) {
+        modelos.Mesas.update({
+            parlamento: 1
+        },
+        {
+            where: {
+                id: idMesa
+            }
+        }).then(mesa => {
+            return res.status(200).json({
+                data: [true],
+                msg: 'ok'
+            })
+        })
+    }
+}
+
+
+
 let uploadDataPresidente = (req, res) => {
     let datas = req.body.data;
     datas.forEach(data => {
@@ -141,14 +220,7 @@ let uploadDataPresidente = (req, res) => {
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
-                        modelos.Mesas.update({
-                            presidente: 1
-                        },
-                        {
-                            where: {
-                                id: idMesa
-                            }
-                        })
+                        
                     })
                 }
                 
@@ -481,5 +553,9 @@ module.exports = {
     uploadImgNacional,
     uploadImgProvincial,
     uploadImgParlamento,
-    getNacionalImagenes
+    getNacionalImagenes,
+    inconsistentePresidente,
+    inconsistenteNacional,
+    inconsistenteProvincial,
+    inconsistenteParlamento
 }

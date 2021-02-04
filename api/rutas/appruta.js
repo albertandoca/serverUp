@@ -20,6 +20,10 @@ api.put('/uploadimgpresidente', [jwtControl.autenticoApp], appControl.uploadImgP
 api.put('/uploadimgnacional', [jwtControl.autenticoApp], appControl.uploadImgNacional)
 api.put('/uploadimgprovincial', [jwtControl.autenticoApp], appControl.uploadImgProvincial)
 api.put('/uploadimgparlamento', [jwtControl.autenticoApp], appControl.uploadImgParlamento)
+api.put('/inconsistenteparlamento', [jwtControl.autenticoApp], appControl.inconsistenteParlamento)
+api.put('/inconsistentenacional', [jwtControl.autenticoApp], appControl.inconsistenteNacional)
+api.put('/inconsistenteprovincial', [jwtControl.autenticoApp], appControl.inconsistenteProvincial)
+api.put('/inconsistentepresidente', [jwtControl.autenticoApp], appControl.inconsistentePresidente)
 
 
 
