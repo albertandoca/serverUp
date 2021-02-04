@@ -35,9 +35,8 @@ let login = (req, res) => {
                         if (persona.rol === 'DATOS' || persona.rol === 'VERIFICA') {
                             delete persona.rol
                             delete persona.seguro
-                            delete persona.correo
+                            delete persona.correo 
                             let semilla = `${persona.cedula}awsd${process.env.KEY_JWT}`
-                            console.log(semilla)
                             let frase = jwt.sign({data: persona }, semilla, {
                                 algorithm: 'HS256'
                             })
