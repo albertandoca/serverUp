@@ -36,6 +36,7 @@ let login = (req, res) => {
                             delete persona.rol
                             delete persona.seguro
                             delete persona.correo 
+                            
                             let semilla = `${persona.cedula}awsd${process.env.KEY_JWT}`
                             let frase = jwt.sign({data: persona }, semilla, {
                                 algorithm: 'HS256'
@@ -81,7 +82,6 @@ let login = (req, res) => {
 
 
 let mesas = (req, res) => {
-    console.log('mesa', req.body)
     let idPersona = req.body.data.idPersona
     
     modelos.Mesas.findAll({
@@ -403,7 +403,6 @@ let uploadImgNacional = (req, res) => {
                 msg: 'ok'
             })
         }).catch(err => {
-            console.log(err)
             return res.status(200).json({
                 data: [false],
                 msg: 'No ok'
@@ -451,7 +450,6 @@ let uploadImgProvincial = (req, res) => {
                 msg: 'ok'
             })
         }).catch(err => {
-            console.log(err)
             return res.status(200).json({
                 data: [false],
                 msg: 'No ok'
@@ -482,7 +480,6 @@ let uploadImgPresidente = (req, res) => {
                 msg: 'ok'
             })
         }).catch(err => {
-            console.log(err)
             return res.status(200).json({
                 data: [false],
                 msg: 'No ok'
@@ -513,7 +510,6 @@ let uploadImgParlamento = (req, res) => {
                 msg: 'ok'
             })
         }).catch(err => {
-            console.log(err)
             return res.status(200).json({
                 data: [false],
                 msg: 'No ok'
@@ -525,17 +521,6 @@ let uploadImgParlamento = (req, res) => {
             msg: 'No ok'
         })
     }
-}
-
-let getNacionalImagenes = (req, res) => {
-    modelos.NacionalImagenes.findAll().then(respuesta => {
-        console.log(respuesta)
-        return res.status(200).json({
-            data: respuesta
-        })
-    }).catch(err => {
-        console.log(err)
-    })
 }
 
 
@@ -553,9 +538,9 @@ module.exports = {
     uploadImgNacional,
     uploadImgProvincial,
     uploadImgParlamento,
-    getNacionalImagenes,
     inconsistentePresidente,
     inconsistenteNacional,
     inconsistenteProvincial,
     inconsistenteParlamento
+    
 }

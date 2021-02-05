@@ -3,7 +3,6 @@
 let jwt = require('jsonwebtoken');
 
 let autenticoApp = (req, res, next) => {
-
     let tk = req.body.frase 
     let seguro = req.body.seguro
     let semilla = `${seguro}awsd${process.env.KEY_JWT}`

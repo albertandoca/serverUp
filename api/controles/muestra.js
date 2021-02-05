@@ -43,7 +43,8 @@ let asignarMuestra = async (req, res) => {
             let recinto = data
             let controlF = 0
             let controlM = 0
-            if (recinto.control > 0) {
+            let control = Math.ceil(((recinto.jff - recinto.jfi + 1) + (recinto.jmf - recinto.jmf + 1)) * 0.6)
+            if (control > 0) {
                 if ((recinto.control % 2) === 0) {
                     controlF = recinto.control / 2
                     controlM = recinto.control / 2
