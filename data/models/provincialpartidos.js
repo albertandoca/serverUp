@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     idPartido: DataTypes.INTEGER,
     idMesa: DataTypes.BIGINT,
     voto: DataTypes.INTEGER,
+    idLugar: DataTypes.INTEGER,
     idIngreso: DataTypes.INTEGER,
     idModifica: DataTypes.INTEGER
   }, {

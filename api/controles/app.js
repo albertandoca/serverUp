@@ -202,6 +202,7 @@ let uploadDataPresidente = (req, res) => {
         let idPartido = data.idPartido
         let idMesa = data.idMesa
         let voto = data.voto
+        let idLugar = data.idLugar
         let idIngreso = data.idIngreso
         let idModifica = data.idModifica
 
@@ -217,6 +218,7 @@ let uploadDataPresidente = (req, res) => {
                         idPartido: idPartido,
                         idMesa: idMesa,
                         voto: voto,
+                        idLugar: idLugar,
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
@@ -240,6 +242,7 @@ let uploadDataNacional = (req, res) => {
         let idPartido = data.idPartido
         let idMesa = data.idMesa
         let voto = data.voto
+        let idLugar = data.idMesa
         let idIngreso = data.idIngreso
         let idModifica = data.idModifica
 
@@ -255,6 +258,7 @@ let uploadDataNacional = (req, res) => {
                         idPartido: idPartido,
                         idMesa: idMesa,
                         voto: voto,
+                        idLugar: idLugar,
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
@@ -278,6 +282,7 @@ let uploadDataProvincial = (req, res) => {
         let idPartido = data.idPartido
         let idMesa = data.idMesa
         let voto = data.voto
+        let idLugar = data.idLugar
         let idIngreso = data.idIngreso
         let idModifica = data.idModifica
 
@@ -293,6 +298,7 @@ let uploadDataProvincial = (req, res) => {
                         idPartido: idPartido,
                         idMesa: idMesa,
                         voto: voto,
+                        idLugar: idLugar,
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
@@ -316,6 +322,7 @@ let uploadDataParlamento = (req, res) => {
         let idPartido = data.idPartido
         let idMesa = data.idMesa
         let voto = data.voto
+        let idLugar = data.idLugar
         let idIngreso = data.idIngreso
         let idModifica = data.idModifica
 
@@ -331,6 +338,7 @@ let uploadDataParlamento = (req, res) => {
                         idPartido: idPartido,
                         idMesa: idMesa,
                         voto: voto,
+                        idLugar: idLugar,
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
