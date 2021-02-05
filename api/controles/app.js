@@ -258,14 +258,7 @@ let uploadDataNacional = (req, res) => {
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
-                        modelos.Mesas.update({
-                            nacional: 1
-                        },
-                        {
-                            where: {
-                                id: idMesa
-                            }
-                        })
+                        
                     })
                 }
                 
@@ -303,14 +296,7 @@ let uploadDataProvincial = (req, res) => {
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
-                        modelos.Mesas.update({
-                            provincial: 1
-                        },
-                        {
-                            where: {
-                                id: idMesa
-                            }
-                        })
+                        
                     })
                 }
                 
@@ -348,14 +334,7 @@ let uploadDataParlamento = (req, res) => {
                         idIngreso: idIngreso,
                         idModifica: idModifica
                     }).then(respuesta => {
-                        modelos.Mesas.update({
-                            parlamento: 1
-                        },
-                        {
-                            where: {
-                                id: idMesa
-                            }
-                        })
+                        
                     })
                 }
                 
@@ -388,13 +367,9 @@ let uploadImgNacional = (req, res) => {
                     urlImg2: urlImg2,
                     urlImg3: urlImg3
                 }).then(respuesta => {
-                    modelos.Mesas.update({
-                        nacional: 2
-                    },
-                    {
-                        where: {
-                            id: idMesa
-                        }
+                    return res.status(200).json({
+                        data: [true],
+                        msg: 'ok'
                     })
                 })
             }
@@ -435,13 +410,9 @@ let uploadImgProvincial = (req, res) => {
                     urlImg2: urlImg2,
                     urlImg3: urlImg3
                 }).then(respuesta => {
-                    modelos.Mesas.update({
-                        provincial: 2
-                    },
-                    {
-                        where: {
-                            id: idMesa
-                        }
+                    return res.status(200).json({
+                        data: [true],
+                        msg: 'ok'
                     })
                 })
             }
@@ -467,7 +438,7 @@ let uploadImgPresidente = (req, res) => {
     let idMesa = req.body.data.idMesa
 
     if (idMesa) {
-        modelos.Mesas.update({
+        /*modelos.Mesas.update({
             presidente: 2
         },
         {
@@ -484,6 +455,10 @@ let uploadImgPresidente = (req, res) => {
                 data: [false],
                 msg: 'No ok'
             })
+        })*/
+        return res.status(200).json({
+            data: [false],
+            msg: 'No ok'
         })
     } else {
         return res.status(200).json({
@@ -497,7 +472,7 @@ let uploadImgParlamento = (req, res) => {
     let idMesa = req.body.data.idMesa
 
     if (idMesa) {
-        modelos.Mesas.update({
+        /*modelos.Mesas.update({
             parlamento: 2
         },
         {
@@ -510,10 +485,11 @@ let uploadImgParlamento = (req, res) => {
                 msg: 'ok'
             })
         }).catch(err => {
-            return res.status(200).json({
-                data: [false],
-                msg: 'No ok'
-            })
+            
+        })*/
+        return res.status(200).json({
+            data: [false],
+            msg: 'No ok'
         })
     } else {
         return res.status(200).json({
