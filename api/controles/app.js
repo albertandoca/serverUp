@@ -444,16 +444,29 @@ let uploadImgProvincial = (req, res) => {
 
 let uploadImgPresidente = (req, res) => {
     let idMesa = req.body.data.idMesa
-
-    if (idMesa) {
-        /*modelos.Mesas.update({
-            presidente: 2
-        },
-        {
+    let urlImg1 = req.body.data.urlImg1
+    let urlImg2 = req.body.data.urlImg2
+    let urlImg3 = req.body.data.urlImg3
+    
+    if (idMesa && urlImg1 && urlImg2 && urlImg3) {
+        modelos.PresidenteImagenes.findOne({
             where: {
-                id: idMesa
+                idMesa: idMesa
             }
-        }).then(respuesta => {
+        }).then(consulta => {
+            if (!consulta) {
+                modelos.PresidenteImagenes.create({
+                    idMesa: idMesa,
+                    urlImg1: urlImg1,
+                    urlImg2: urlImg2,
+                    urlImg3: urlImg3
+                }).then(respuesta => {
+                    return res.status(200).json({
+                        data: [true],
+                        msg: 'ok'
+                    })
+                })
+            }
             return res.status(200).json({
                 data: [true],
                 msg: 'ok'
@@ -463,10 +476,6 @@ let uploadImgPresidente = (req, res) => {
                 data: [false],
                 msg: 'No ok'
             })
-        })*/
-        return res.status(200).json({
-            data: [false],
-            msg: 'No ok'
         })
     } else {
         return res.status(200).json({
