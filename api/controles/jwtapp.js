@@ -10,6 +10,7 @@ let autenticoApp = (req, res, next) => {
     if(tk) {
         jwt.verify(tk, semilla, (err, decoded) => {
             if (err) {
+                console.log(err)
                 return res.status(200).json({
                     data: {token: false},
                     msg: 'no Ok'
@@ -19,6 +20,7 @@ let autenticoApp = (req, res, next) => {
             }
         })
     } else {
+        
         return res.status(200).json({
             data: {token: false},
             msg: 'no Ok'

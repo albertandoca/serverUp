@@ -17,7 +17,7 @@ module.exports = {
       voto: {
         type: Sequelize.INTEGER
       },
-      idlugar: {
+      idLugar: {
         type: Sequelize.INTEGER
       },
       idIngreso: {

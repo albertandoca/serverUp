@@ -43,42 +43,32 @@ let asignarMuestra = async (req, res) => {
             let recinto = data
             let controlF = 0
             let controlM = 0
-            let control = Math.ceil(((recinto.jff - recinto.jfi + 1) + (recinto.jmf - recinto.jmf + 1)) * 0.6)
-            if (control > 0) {
-                if ((recinto.control % 2) === 0) {
-                    controlF = recinto.control / 2
-                    controlM = recinto.control / 2
-                } else {
-                    if (recinto.jff === recinto.jmf) {
-                        const random = Math.round(Math.random())
-                        if (random === 1) {
-                            controlF = Math.ceil(recinto.control / 2)
-                            controlM = Math.floor(recinto.control / 2)
-                        } else {
-                            controlM = Math.ceil(recinto.control / 2)
-                            controlF = Math.floor(recinto.control / 2)
-                        }
-                    } else {
-                        if (recinto.jff > recinto.jmf) {
-                            controlF = Math.ceil(recinto.control / 2)
-                            controlM = Math.floor(recinto.control / 2)
-                        } else {
-                            controlM = Math.ceil(recinto.control / 2)
-                            controlF = Math.floor(recinto.control / 2)
-                        }
-                    }
-                }
-                if (recinto.jfi > 0 && recinto.jff >0) {
+            let ctf = 0
+            let ctm = 0
+            if (recinto.jfi > 0) {
+                ctf = recinto.jff - recinto.jfi + 1
+            } 
+            if (recinto.jmi > 0) {
+                ctm = recinto.jmf - recinto.jmf + 1
+            }
+           
+            let control = Math.ceil((ctf + ctm) * 0.6)
+            
+                controlF = Math.ceil(ctf * 0.6)
+                controlM = Math.ceil(ctm * 0.6)
+
+                if (recinto.jfi > 0 && recinto.jff > 0) {
                     const randomF = crearRandom('F', recinto.idLugar, controlF, recinto.jff, recinto.jfi)
                 }
-                if (recinto.jmi > 0 && recinto.jmf >0) {
+                if (recinto.jmi > 0 && recinto.jmf > 0) {
                     const randomM = crearRandom('M', recinto.idLugar, controlM, recinto.jmf, recinto.jmi)   
                 }
                              
-            }
+            
             
         })
         ope++
+        console.log(ope)
     }
     res.status(200).json({
         msg: `ok procesados ${ ope }`

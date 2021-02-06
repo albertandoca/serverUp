@@ -119,6 +119,7 @@ let getPersonas = (req, res) => {
 
 
 let inconsistentePresidente = (req, res) => {
+    console.log('dta inco', req.body)
     let idMesa = req.body.data.idMesa
     if(idMesa) {
         modelos.Mesas.update({
@@ -132,6 +133,12 @@ let inconsistentePresidente = (req, res) => {
             return res.status(200).json({
                 data: [true],
                 msg: 'ok'
+            })
+        }).catch(err => {
+            console.log(err)
+            return res.status(200).json({
+                data: [false],
+                msg: 'No ok'
             })
         })
     }
@@ -176,6 +183,7 @@ let inconsistenteProvincial = (req, res) => {
 }
 
 let inconsistenteParlamento = (req, res) => {
+    console.log(req.body)
     let idMesa = req.body.data.idMesa
     if(idMesa) {
         modelos.Mesas.update({
@@ -375,14 +383,11 @@ let uploadImgNacional = (req, res) => {
                     urlImg2: urlImg2,
                     urlImg3: urlImg3
                 }).then(respuesta => {
-                    return res.status(200).json({
-                        data: [true],
-                        msg: 'ok'
-                    })
+                    
                 })
             }
             return res.status(200).json({
-                data: [true],
+                data: ['true'],
                 msg: 'ok'
             })
         }).catch(err => {
@@ -418,14 +423,11 @@ let uploadImgProvincial = (req, res) => {
                     urlImg2: urlImg2,
                     urlImg3: urlImg3
                 }).then(respuesta => {
-                    return res.status(200).json({
-                        data: [true],
-                        msg: 'ok'
-                    })
+                    
                 })
             }
             return res.status(200).json({
-                data: [true],
+                data: ['true'],
                 msg: 'ok'
             })
         }).catch(err => {
@@ -461,14 +463,11 @@ let uploadImgPresidente = (req, res) => {
                     urlImg2: urlImg2,
                     urlImg3: urlImg3
                 }).then(respuesta => {
-                    return res.status(200).json({
-                        data: [true],
-                        msg: 'ok'
-                    })
+                    
                 })
             }
             return res.status(200).json({
-                data: [true],
+                data: ['true'],
                 msg: 'ok'
             })
         }).catch(err => {

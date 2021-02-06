@@ -1,30 +1,24 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('PresidentePartidos', {
+    await queryInterface.createTable('PresidenteImagenes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idPartido: {
-        type: Sequelize.INTEGER
-      },
       idMesa: {
         type: Sequelize.BIGINT
       },
-      voto: {
-        type: Sequelize.INTEGER
+      urlImg1: {
+        type: Sequelize.TEXT
       },
-      idLugar: {
-        type: Sequelize.INTEGER
+      urlImg2: {
+        type: Sequelize.TEXT
       },
-      idIngreso: {
-        type: Sequelize.INTEGER
-      },
-      idModifica: {
-        type: Sequelize.INTEGER
+      urlImg3: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('PresidentePartidos');
+    await queryInterface.dropTable('PresidenteImagenes');
   }
 };
