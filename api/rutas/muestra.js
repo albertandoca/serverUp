@@ -7,8 +7,8 @@ let api = express.Router(),
 
 api.get('/prueba', muestraControl.prueba)
 api.get('/muestra', muestraControl.asignarMuestra)
-api.get('/partidomesa/:inicio/:fin', muestraControl.crearPartidoMesa)
-api.get('/actualizapartidomesa', muestraControl.actualizaPartidoMesa)
-api.get('/leerpresidentes', muestraControl.leerpresidentes)
+//api.get('/partidomesa/:inicio/:fin', muestraControl.crearPartidoMesa)
+//api.get('/actualizapartidomesa', muestraControl.actualizaPartidoMesa)
+//api.get('/leerpresidentes', muestraControl.leerpresidentes)
 
 module.exports = api
