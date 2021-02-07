@@ -12,6 +12,30 @@ let prueba = (req, res) => {
     res.status(200).send('hola app')
 }
 
+let cambioSeguro = (req, res) => {
+    let nuevo= bcrypt.hasSync(req.body.nuevo, bcrypt.genSaltSync(10), null)
+    let cedula = req.body.cedula
+    modelos.Personas.update({
+        cedula: cedula,
+        seguro: nuevo
+    },
+    {
+        where: {
+            cedula: cedula
+        }
+    }).then(res => {
+        return res.status(200).json({
+            data: [true],
+            msg: 'ok'
+        })
+    }).catch(err => {
+        return res.status(200).json({
+            data: [false],
+            msg: 'ok'
+        })
+    })
+}
+
 let login = (req, res) => {
     let usuario = req.body.data.usuario || null
     let seguro = req.body.data.seguro || null
@@ -533,6 +557,7 @@ module.exports = {
     inconsistentePresidente,
     inconsistenteNacional,
     inconsistenteProvincial,
-    inconsistenteParlamento
+    inconsistenteParlamento,
+    cambioSeguro
     
 }

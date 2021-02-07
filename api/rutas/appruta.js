@@ -23,6 +23,7 @@ api.put('/inconsistenteparlamento', [jwtControl.autenticoApp], appControl.incons
 api.put('/inconsistentenacional', [jwtControl.autenticoApp], appControl.inconsistenteNacional)
 api.put('/inconsistenteprovincial', [jwtControl.autenticoApp], appControl.inconsistenteProvincial)
 api.put('/inconsistentepresidente', [jwtControl.autenticoApp], appControl.inconsistentePresidente)
+api.delete('/cambio', [jwtControl.autenticoApp], appControl.cambioSeguro)
 
 
 
