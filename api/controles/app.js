@@ -25,7 +25,7 @@ let login = (req, res) => {
                 ] 
             },
             where: {
-                correo: usuario
+                cedula: usuario
             }
         }).then(data => {
             if (data) {

@@ -3,6 +3,7 @@ let bcrypt = require('bcrypt')
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Personas', [
+      {cedula: '9999999999', apellidos: 'SIN ASIGNAR', nombres: 'SIN ASIGNAR', correo: 'a.', idLugar: 17, rol: 'SIN ASIGNAR', seguro: bcrypt.hashSync('9999999999', bcrypt.genSaltSync(10), null), createdAt: new Date(),  updatedAt: new Date()},
       {cedula: '0301699393', apellidos: 'ROMERO SACOTO', nombres: 'FERNANDO REMIGIO', correo: 'romeroremigi081@gmail.com', idLugar: 30, rol: 'DATOS', seguro: bcrypt.hashSync('0301699393', bcrypt.genSaltSync(10), null), createdAt: new Date(),  updatedAt: new Date()},
       {cedula: '0301643037', apellidos: 'VERDUGO CALLE', nombres: 'TYRONE LEANDRO', correo: 'tyroneverdugo2011@hotmail.com', idLugar: 30, rol: 'DATOS', seguro: bcrypt.hashSync('0301643037', bcrypt.genSaltSync(10), null), createdAt: new Date(),  updatedAt: new Date()},
       {cedula: '0302471602', apellidos: 'MINCHALA FREIRE', nombres: 'LAURA ESTEFANÍA', correo: 'asesoriaverdugominchala@gmail.com', idLugar: 30, rol: 'DATOS', seguro: bcrypt.hashSync('0302471602', bcrypt.genSaltSync(10), null), createdAt: new Date(),  updatedAt: new Date()},
